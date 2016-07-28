@@ -11,7 +11,7 @@ angular.module('noServApp').directive('seekbar', function(){
       $scope.test = "test";
 
       $scope.calculate = function(a,b,c,d,e,lowStr,highStr,billStr) {
-        $scope.error = " ";
+        $scope.errorMessage = " ";
         console.log("billstr " + billStr)
         console.log("high: " + highStr);
         console.log("low: " + lowStr)
@@ -67,23 +67,23 @@ angular.module('noServApp').directive('seekbar', function(){
           return str;
         }
         if (billTotal === undefined) {
-          $scope.error = errorFunc("Please enter a valid bill total.");
+          $scope.errorMessage = errorFunc("Please enter a valid bill total.");
         } else if (billTotal === NaN) {
-          $scope.error = errorFunc("Please enter a valid bill total.");
+          $scope.errorMessage = errorFunc("Please enter a valid bill total.");
         } else if (billStr === undefined) {
-          $scope.error = errorFunc("Please enter a valid bill total.");
+          $scope.errorMessage = errorFunc("Please enter a valid bill total.");
         } else if (billStr === NaN) {
-          $scope.error = errorFunc("Please enter a valid bill total.");
+          $scope.errorMessage = errorFunc("Please enter a valid bill total.");
         } else if (low > high){
-          $scope.error = errorFunc("Low value cannot be higher than the high value.");
+          $scope.errorMessage = errorFunc("Low value cannot be higher than the high value.");
         } else if (low === high){
-          $scope.error = errorFunc("Low and High values cannot be the same.");
+          $scope.errorMessage = errorFunc("Low and High values cannot be the same.");
         } else if (low === null && high === null) {
-          $scope.error = errorFunc("Please select a value for Low and High");
+          $scope.errorMessage = errorFunc("Please select a value for Low and High");
         } else if (lowStr === null) {
-          $scope.error = errorFunc("Please select a value for Low");
+          $scope.errorMessage = errorFunc("Please select a value for Low");
         } else if (highStr === null) {
-          $scope.error = errorFunc("Please select a value for High");
+          $scope.errorMessage = errorFunc("Please select a value for High");
         }
       }
       $scope.test = function(a) {
