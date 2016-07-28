@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="noServApp">
+  <head>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body ng-controller="mainCtrl">
+    <section class="nav">
+      <nav>
+        <ul>
+          <li><a ui-sref="home">Home</a></li>
+          <li><a ui-sref="about">About</a></li>
+          <li><a ui-sref="waiterRater">Waiter Rater</a></li>
+        </ul>
+      </nav>
+      </section>
+
+      <ui-view></ui-view>
+
+
+      <section class="mainSection">
+        <img src="https://images.unsplash.com/photo-1458677677220-000ddaa037e3?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=bd14952b6d2cc15b7321bcd4d04ed87e" alt="" />
+    </section>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/mainCtrl.js"></script>
+    <script src="./js/mainServ.js"></script>
+    <script src="./js/routes.js"></script>
+    <script src="./js/waiterRaterCtrl.js"></script>
+    <script src="./js/seekbar.js"></script>
+  </body>
+</html>

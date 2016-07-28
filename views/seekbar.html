@@ -1,0 +1,58 @@
+<div class="error">
+  <p>
+    {{error}}
+  </p>
+</div>
+<div class="select">
+    <select class="low" ng-model="lowData.model">
+        <option ng-repeat="option in lowData.options" value="{{option.value}}")>{{option.name}}</option>
+    </select>
+    <select class="low" ng-model="highData.model">
+        <option ng-repeat="option in highData.options" value="{{option.value}}">{{option.name}}</option>
+    </select>
+</div>
+<div class="seekBar">
+    <span>Friendliness</span>
+    <input type="range" value="0" min="0" max="5" ng-model="seekVal">
+    <p>
+        {{seekVal}}
+    </p>
+    <span>Timeliness</span>
+    <input type="range" value="0" min="0" max="5" ng-model="seekVal2">
+    <p>
+        {{seekVal2}}
+    </p>
+    <span>Drinks</span>
+    <input type="range" value="0" min="0" max="5" ng-model="seekVal3">
+    <p>
+        {{seekVal3}}
+    </p>
+    <span>Accuracy</span>
+    <input type="range" value="0" min="0" max="5" ng-model="seekVal4">
+    <p>
+        {{seekVal4}}
+    </p>
+    <span>Cleanliness</span>
+    <input type="range" value="0" min="0" max="5" ng-model="seekVal5">
+    <p>
+        {{seekVal5}}
+    </p>
+
+</div>
+<div class="calculate">
+    <input type="number" name="name" value="" placeholder="Bill total" ng-model="billTotal">
+    <div class="button" ng-click="calculate(seekVal,seekVal2,seekVal3,seekVal4,seekVal5, lowData.model,highData.model,billTotal)")>
+        <p>
+            Calculate
+        </p>
+    </div>
+    <p>
+      Tip percent: {{tipPerc}}
+      <br>
+      <br>
+      Tip amount: {{tipAmt}}
+      <br>
+      <br>
+      Final total: {{finalTotal}}
+    </p>
+</div>

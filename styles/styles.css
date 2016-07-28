@@ -1,0 +1,169 @@
+.nav nav{
+  background: rgb(84, 167, 89);
+  opacity: .8;
+  width: 100%;
+  margin: auto;
+  height: 10vh;
+  position: fixed;
+  z-index: 3;
+}
+
+.nav nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+    text-transform: uppercase   ;
+    font-weight: 100;
+    color: #fff;
+    padding-top: 25px
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.mainSection{
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+}
+
+.mainSection img {
+  width: 100%;
+  opacity: .85;
+}
+
+.mainSection p{
+  color: red;
+}
+
+.select {
+  margin-top:30px;
+}
+
+.error p {
+  font-size: 20px !important;
+  font-style: italic;
+  color:red;
+}
+
+.ui-view-section {
+  width: 50%;
+  height: 70vh;
+  margin:0 auto;
+  margin-top: 90px;
+  left:20%;
+  right:20%;
+  border-radius: 10px;
+  background: rgb(237, 235, 218);
+  opacity: .95;
+  position: absolute;
+  z-index: 2;
+  border-width: medium;
+  border-color: grey;
+  border-style: solid;
+  display: flex;
+  display: block;
+}
+
+.ui-view-section p {
+  padding-top: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.ui-view-section .low {
+  height: 30px;
+  margin-left: 25%;
+}
+
+.ui-view-section .high {
+  height: 30px;
+  margin-right: 25%;
+}
+
+.ui-view-section .select{
+  width: 300px;
+  height: 30px;
+  margin:auto;
+  display: block;
+}
+
+.ui-view-section .select select {
+  margin-top: 11px;
+  height: 20px;
+}
+
+.ui-view-section .select p {
+  font-size: 18px;
+  float:left;
+}
+
+.ui-view-section .seekBar {
+  width: 250px;
+  margin:auto;
+  margin-top: 30px;
+}
+
+.ui-view-section .seekBar input{
+  margin-top: 10px;
+  width: 100px;
+  float: left;
+}
+
+.ui-view-section .seekBar p {
+  float:right;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.ui-view-section .seekBar span {
+  float:left;
+  width: 90px;
+  margin-top: 10px;
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.ui-view-section .calculate {
+  width:140px;
+  height:44px;
+  margin:auto;
+  margin-top: 20px;
+}
+
+.ui-view-section .calculate input {
+  width:100%;
+  height: 20px;
+  border: none;
+  margin:auto;
+  background: white;
+  color:black;
+  border-style: solid;
+  border-width: thin;
+  margin-top: 10px;
+  padding-left:5px;
+}
+
+.ui-view-section .calculate .button {
+  width:104%;
+  height: 30px;
+  background: grey;
+  cursor: pointer;
+}
+
+.ui-view-section .calculate .button p{
+  padding:7px;
+  font-size: 14px;
+  color: black;
+  cursor:pointer;
+}
+
+.ui-view-section .calculate p{
+  margin: auto;
+  font-size: 14px;
+  display: inline-block;
+}
