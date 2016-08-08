@@ -1,7 +1,7 @@
 angular.module('noServApp').directive('seekbar', function(){
   return{
     templateUrl: '../views/seekbar.html',
-    controller: function($scope) {
+    controller: function($scope, mainServ) {
       $scope.seekVal = 0;
       $scope.seekVal2 = 0;
       $scope.seekVal3 = 0;
@@ -10,11 +10,20 @@ angular.module('noServApp').directive('seekbar', function(){
 
       $scope.test = "test";
 
-      $scope.calculate = function(a,b,c,d,e,lowStr,highStr,billStr) {
+      $scope.serverData = {};
+
+      $scope.calculate = function(a,b,c,d,e,lowStr,highStr,billStr,name) {
         $scope.error = " ";
-        console.log("billstr " + billStr)
-        console.log("high: " + highStr);
-        console.log("low: " + lowStr)
+
+        $scope.serverData.friendly = parseInt(a);
+        $scope.serverData.time = parseInt(b);
+        $scope.serverData.drinks = parseInt(c);
+        $scope.serverData.accuracy = parseInt(d);
+        $scope.serverData.clean = parseInt(e);
+        $scope.serverData.high = highStr;
+        $scope.serverData.low = lowStr;
+        $scope.serverData.billTotal = billStr.toString;
+        $scope.serverData.name = name;
         // console.log(a);
         // console.log(b);
         // console.log(c);
@@ -25,6 +34,8 @@ angular.module('noServApp').directive('seekbar', function(){
         var avg = (parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d) + parseInt(e)) / 5;
         var low = parseInt(lowStr);
         var high = parseInt(highStr);
+
+
         // console.log("avg: " + avg);
         // console.log("low: " + low);
         // console.log("high: " + high);
@@ -36,7 +47,9 @@ angular.module('noServApp').directive('seekbar', function(){
           return tip;
         }
         var tipPerc = getTipPerc(low,mult,avg);
+
         $scope.tipPerc = (tipPerc * 100).toFixed(1) + "%"
+        $scope.serverData.tipPerc = $scope.tipPerc;
         // console.log("tipPerc: " + tipPerc)
         var getTipAmt = function(billTotal, tipPerc) {
           // console.log(typeof billTotal)
@@ -48,17 +61,23 @@ angular.module('noServApp').directive('seekbar', function(){
           return tipAmt;
         }
         var tipAmt = getTipAmt(billTotal, tipPerc);
+        $scope.serverData.tipAmt = tipAmt.toFixed(2);
         $scope.tipAmt = "$" + tipAmt.toFixed(2);
-        // console.log("tipAmt: " + tipAmt)
-        // console.log("tipAmt: " + typeof tipAmt)
+         console.log("tipAmt: " + tipAmt)
+         console.log("tipAmt: " + typeof tipAmt)
         var getFinalTotal = function(billTotal, tipAmt) {
-          // console.log(billTotal, tipAmt)
+           console.log(billTotal, tipAmt)
           var total = billTotal + tipAmt;
           return total.toFixed(2);
         }
         var finalTotal = getFinalTotal(billTotal, tipAmt);
+        $scope.serverData.finalTotal = finalTotal;
         $scope.finalTotal = "$" + finalTotal;
-        // console.log("finalTotal: " + typeof finalTotal);
+         console.log("finalTotal: " + typeof finalTotal);
+
+        //$scope.obj.name = finalTotal;
+
+        mainServ.addData($scope.serverData);
 
         var errorFunc = function(str){
           $scope.finalTotal = " ";
